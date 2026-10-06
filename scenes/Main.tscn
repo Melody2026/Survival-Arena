@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://gg2hdjuv3cdn"]
+
+[ext_resource type="Script" uid="uid://cf0x8synil3o0" path="res://scipts/player.gd" id="1_elqb8"]
+[ext_resource type="Script" uid="uid://4djeoaji0a0c" path="res://scipts/main.gd" id="1_rvslj"]
+
+[node name="Main" type="Node2D" unique_id=1372127878]
+script = ExtResource("1_rvslj")
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1753841361 groups=["player"]]
+position = Vector2(480, 270)
+script = ExtResource("1_elqb8")
+
+[node name="EnemySpawnTimer" type="Timer" parent="." unique_id=725564450]
+wait_time = 1.5
+autostart = true
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1762174286]
+
+[node name="WaveLabel" type="Label" parent="HUD" unique_id=1593219233]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 78.0
+offset_bottom = 43.0
+theme_override_font_sizes/font_size = 26
+text = "WAVE 1"
+
+[node name="ScoreLabel" type="Label" parent="HUD" unique_id=1639450915]
+offset_left = 20.0
+offset_top = 55.0
+offset_right = 81.0
+offset_bottom = 104.0
+text = "Score: 0
+"
+
+[node name="HealthLabel" type="Label" parent="HUD" unique_id=1332611237]
+offset_left = 20.0
+offset_top = 90.0
+offset_right = 78.0
+offset_bottom = 113.0
+text = "HP: 100"
+
+[node name="GameOver" type="Control" parent="HUD" unique_id=417381943]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Title" type="Label" parent="HUD/GameOver" unique_id=1083425193]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "GaMe OvEr"
+
+[node name="FinalScore" type="Label" parent="HUD/GameOver" unique_id=1510777501]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Score: 0"
+
+[node name="RestartButton" type="Button" parent="HUD/GameOver" unique_id=1131158378]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "PLAY AGAIN!"
