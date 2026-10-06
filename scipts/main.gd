@@ -74,6 +74,14 @@ func add_score(points):
 func game_over_screen():
 	game_over = true
 	spawn_timer.stop()
+
+	# Remove all remaining enemies
+	for enemy in get_tree().get_nodes_in_group("enemy"):
+		enemy.queue_free()
+
 	game_over_panel.visible = true
 	final_score.text = "Score: " + str(score)
-	
+
+
+func _on_restart_button_pressed() -> void:
+	get_tree().reload_current_scene()

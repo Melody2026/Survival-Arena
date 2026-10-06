@@ -40,26 +40,35 @@ offset_bottom = 113.0
 text = "HP: 100"
 
 [node name="GameOver" type="Control" parent="HUD" unique_id=417381943]
+visible = false
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 960.0
+offset_bottom = 540.0
 
 [node name="Title" type="Label" parent="HUD/GameOver" unique_id=1083425193]
-visible = false
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 360.0
+offset_top = 170.0
+offset_right = 618.0
+offset_bottom = 237.0
+theme_override_font_sizes/font_size = 48
 text = "GaMe OvEr"
 
 [node name="FinalScore" type="Label" parent="HUD/GameOver" unique_id=1510777501]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 400.0
+offset_top = 240.0
+offset_right = 461.0
+offset_bottom = 263.0
 text = "Score: 0"
 
 [node name="RestartButton" type="Button" parent="HUD/GameOver" unique_id=1131158378]
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 390.0
+offset_top = 300.0
+offset_right = 496.0
+offset_bottom = 331.0
 text = "PLAY AGAIN!"
+
+[connection signal="pressed" from="HUD/GameOver/RestartButton" to="." method="_on_restart_button_pressed"]
