@@ -1,4 +1,4 @@
-# Neon Arena
+# Survival Arena
 
 A top-down survival game prototype built with Godot and GDScript.
 
